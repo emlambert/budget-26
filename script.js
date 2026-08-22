@@ -116,11 +116,26 @@ function render(data) {
   // ================= CONSIDERING GOALS (interactive, client-side only) =================
   renderConsidering(data, savingsAmt, spendingTypeMonthly, data.takeHome);
 
-  // ================= CHARTS =================
-  renderPie(data.budgetItems);
-  renderTracker(data.savingsTracker);
+  // ================= CHARTS (non-fatal if Chart.js failed to load) =================
+  if (window.Chart) {
+    try { renderPie(data.budgetItems); } catch (e) { console.error('pie chart failed', e); chartFallback('pie-chart'); }
+    try { renderTracker(data.savingsTracker); } catch (e) { console.error('tracker chart failed', e); chartFallback('tracker-chart'); }
+  } else {
+    console.warn('Chart.js did not load — showing charts as plain text instead');
+    chartFallback('pie-chart');
+    chartFallback('tracker-chart');
+  }
 
   document.getElementById('last-updated').textContent = data.lastUpdated;
+}
+
+function chartFallback(canvasId) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const note = document.createElement('p');
+  note.className = 'note';
+  note.textContent = 'Chart library didn\'t load (offline or blocked) — figures are still correct above, just not plotted here.';
+  canvas.replaceWith(note);
 }
 
 function computeConsideringMonthly(g) {
