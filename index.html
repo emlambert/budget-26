@@ -111,6 +111,14 @@
   </section>
 
   <section>
+    <h2 class="section-title"><span class="eyebrow">Forecast</span> Savings growth & depletion over time</h2>
+    <div class="chart-wrap">
+      <canvas id="forecast-chart" height="220"></canvas>
+    </div>
+    <p class="note">Projects each pot forward using its own monthly contribution. Committed trip/wedding pots (gold) dip to zero the month they're due — that's the money actually being spent, not lost. The green line (Emergency, Baby, Car) never dips — it's the part that's genuinely building.</p>
+  </section>
+
+  <section>
     <h2 class="section-title"><span class="eyebrow">Long view</span> Savings tracker</h2>
     <div class="chart-wrap">
       <canvas id="tracker-chart" height="200"></canvas>
@@ -128,6 +136,6 @@
     document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"><\/script>');
   }
 </script>
-<script src="script.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
