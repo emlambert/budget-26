@@ -12,5 +12,5 @@ export function renderDashboard(totals, takeHome) {
 
   document.getElementById('bloom-figure').textContent = PCT(totals.trueGrowthRate);
   document.getElementById('bloom-sub').textContent =
-    `£${Math.round(totals.trueGrowth)}/mo genuinely building your net worth — money already committed to trips, weddings and hen dos (£${Math.round(totals.spendingTypeMonthly)}/mo) is set aside separately.`;
+    `£${Math.round(totals.trueGrowth)}/mo genuinely building your net worth — £${Math.round(totals.spendingTypeMonthly)}/mo already committed to named trips/weddings and £${Math.round(totals.annualPlanMonthly)}/mo set aside for your annual lifestyle plan are both accounted for separately.`;
 }

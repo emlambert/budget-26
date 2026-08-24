@@ -32,6 +32,16 @@
   "consideringGoals": [
     { "considering": true, "name": "", "category": "Trip", "notes": "", "target": null, "targetDate": "2026-09-01" }
   ],
+  "annualSpendingPlan": [
+    { "category": "Big holiday(s) abroad", "annualAmount": 1800, "notes": "1-2 trips like Sri Lanka/Crete — separate from named Sinking Funds pots once a specific trip is booked" },
+    { "category": "Weekend & short trips", "annualAmount": 600, "notes": "A few UK/nearby getaways through the year" },
+    { "category": "Christmas & festive extras", "annualAmount": 400, "notes": "On top of the monthly Gifts line — travel, extra food, decorations" },
+    { "category": "Birthdays & celebrations", "annualAmount": 250, "notes": "Yours, Louis's, and marking occasions out" },
+    { "category": "Home & garden projects", "annualAmount": 500, "notes": "Bulbs, tools, a new bed or border, small home upgrades" },
+    { "category": "Wardrobe refresh", "annualAmount": 300, "notes": "Beyond routine Shopping — seasonal or occasion pieces" },
+    { "category": "Days out & experiences", "annualAmount": 300, "notes": "Concerts, shows, one-off outings" },
+    { "category": "Miggy (vet, grooming, boarding)", "annualAmount": 250, "notes": "Routine vet visits plus a cushion for the unexpected" }
+  ],
   "monthlySavingsAllocation": {
     "emergencyFloor": 100,
     "babyMonthly": 0,

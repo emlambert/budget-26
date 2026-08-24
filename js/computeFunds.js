@@ -29,7 +29,7 @@ export function computeAllFunds(sinkingFunds, today = new Date()) {
 }
 
 // Aggregate figures reused by dashboard, allocation and forecast components.
-export function computeTotals(funds, budgetItems, takeHome) {
+export function computeTotals(funds, budgetItems, takeHome, annualPlanMonthly = 0) {
   const savingsAmt = budgetItems.filter(i => i.type === 'Savings').reduce((s, i) => s + i.amount, 0);
   const spendingAmt = budgetItems.filter(i => i.type === 'Spending').reduce((s, i) => s + i.amount, 0);
   const savingsRate = savingsAmt / takeHome;
@@ -39,7 +39,10 @@ export function computeTotals(funds, budgetItems, takeHome) {
   const growthTypeMonthly = funds.filter(f => f.fundType === 'Growth' && numericMonthly(f)).reduce((s, f) => s + f.monthly, 0);
   const nearTermTotal = funds.filter(numericMonthly).reduce((s, f) => s + f.monthly, 0);
 
-  const trueGrowth = savingsAmt - spendingTypeMonthly;
+  // True growth strips out BOTH committed sinking-fund spending (trips/weddings)
+  // AND the annual lifestyle spending plan (holidays, gifts, garden, etc.) —
+  // both are money you intend to spend, not money building your net worth.
+  const trueGrowth = savingsAmt - spendingTypeMonthly - annualPlanMonthly;
   const trueGrowthRate = trueGrowth / takeHome;
 
   const targetTotal = funds.reduce((s, f) => s + (f.target || 0), 0);
@@ -47,6 +50,6 @@ export function computeTotals(funds, budgetItems, takeHome) {
 
   return {
     savingsAmt, spendingAmt, savingsRate, spendingTypeMonthly, growthTypeMonthly,
-    nearTermTotal, trueGrowth, trueGrowthRate, targetTotal, balanceTotal
+    nearTermTotal, trueGrowth, trueGrowthRate, targetTotal, balanceTotal, annualPlanMonthly
   };
 }
