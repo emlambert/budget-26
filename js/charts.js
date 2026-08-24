@@ -22,7 +22,7 @@ export function renderAllCharts(data, totals) {
   }
   try { renderPie(data.budgetItems); } catch (e) { console.error('pie chart failed', e); chartFallback('pie-chart'); }
   try { renderTracker(data.savingsTracker); } catch (e) { console.error('tracker chart failed', e); chartFallback('tracker-chart'); }
-  try { renderForecast(data.sinkingFunds, totals.savingsAmt, data.monthlySavingsAllocation.emergencyFloor); } catch (e) { console.error('forecast chart failed', e); chartFallback('forecast-chart'); }
+  try { renderForecast(data.sinkingFunds, totals.savingsAmt, data.monthlySavingsAllocation.emergencyFloor, totals.annualPlanMonthly); } catch (e) { console.error('forecast chart failed', e); chartFallback('forecast-chart'); }
 }
 
 function renderPie(items) {
@@ -77,9 +77,9 @@ function renderTracker(tracker) {
   });
 }
 
-function renderForecast(sinkingFunds, savingsPool, emergencyFloor) {
+function renderForecast(sinkingFunds, savingsPool, emergencyFloor, annualPlanMonthly) {
   const ctx = document.getElementById('forecast-chart');
-  const { labels, totalSeries, growthOnlySeries } = computeForecast(sinkingFunds, savingsPool, emergencyFloor, 24);
+  const { labels, totalSeries, growthOnlySeries, lifestyleSeries } = computeForecast(sinkingFunds, savingsPool, emergencyFloor, annualPlanMonthly, 24);
   if (forecastChart) forecastChart.destroy();
   forecastChart = new Chart(ctx, {
     type: 'line',
@@ -102,6 +102,16 @@ function renderForecast(sinkingFunds, savingsPool, emergencyFloor) {
           backgroundColor: 'rgba(76,122,94,0.12)',
           fill: true,
           tension: 0.15,
+          pointRadius: 0
+        },
+        {
+          label: 'Annual lifestyle plan (builds up, resets each year as it\'s spent)',
+          data: lifestyleSeries,
+          borderColor: '#B5533C',
+          backgroundColor: 'rgba(181,83,60,0.08)',
+          borderDash: [4, 3],
+          fill: true,
+          tension: 0.1,
           pointRadius: 0
         }
       ]

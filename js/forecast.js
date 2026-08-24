@@ -4,11 +4,14 @@ import { addMonths, monthLabel, fundType } from './utils.js';
 //  - a dated pot (has a target date) grows by its own required monthly contribution
 //  - a "Spending" dated pot (trip/occasion) empties out the month its date arrives —
 //    simulating the money actually being spent
-//  - whatever's left of the monthly savings pool after all dated pots are funded
-//    ("leftover") flows to the Emergency fund up to its target, then to the Baby fund,
-//    exactly matching the priority order on the Monthly Savings Allocation section
-// Returns { labels, totalSeries, growthOnlySeries } ready for Chart.js.
-export function computeForecast(sinkingFunds, savingsPool, emergencyFloor, monthsAhead = 24, today = new Date()) {
+//  - the annual spending plan (holidays, gifts, garden, etc.) draws from the same
+//    monthly savings pool before anything reaches Emergency/Baby, and is modelled
+//    as its own rolling balance that resets every 12 months as it's spent through the year
+//  - whatever's left after dated pots AND the annual plan flows to the Emergency
+//    fund up to its target, then to the Baby fund — same priority order as the
+//    Monthly Savings Allocation section
+// Returns { labels, totalSeries, growthOnlySeries, lifestyleSeries } ready for Chart.js.
+export function computeForecast(sinkingFunds, savingsPool, emergencyFloor, annualPlanMonthly = 0, monthsAhead = 24, today = new Date()) {
   const state = sinkingFunds.map(f => ({
     ...f,
     fundType: fundType(f.category),
@@ -22,9 +25,12 @@ export function computeForecast(sinkingFunds, savingsPool, emergencyFloor, month
   const labels = [];
   const totalSeries = [];
   const growthOnlySeries = [];
+  const lifestyleSeries = [];
 
   const startOfMonth = d => new Date(d.getFullYear(), d.getMonth(), 1);
   const cursor = startOfMonth(today);
+
+  let lifestyleBalance = 0;
 
   for (let i = 0; i <= monthsAhead; i++) {
     const monthDate = addMonths(cursor, i);
@@ -53,8 +59,13 @@ export function computeForecast(sinkingFunds, savingsPool, emergencyFloor, month
       }
     });
 
-    // Step 2: whatever's left of the monthly savings pool goes to Emergency, then Baby
-    let leftover = Math.max(savingsPool - datedContributionThisMonth, 0);
+    // Step 2: the annual lifestyle plan draws from the same pool, and rolls over
+    // (spent down) every 12 months rather than accumulating indefinitely
+    lifestyleBalance += annualPlanMonthly;
+    if (i > 0 && i % 12 === 0) lifestyleBalance = 0; // simulated annual spend-down
+
+    // Step 3: whatever's left of the monthly savings pool goes to Emergency, then Baby
+    let leftover = Math.max(savingsPool - datedContributionThisMonth - annualPlanMonthly, 0);
     if (emergency && emergency.balance < emergency.target) {
       const room = emergency.target - emergency.balance;
       const toEmergency = Math.min(leftover, room);
@@ -70,7 +81,8 @@ export function computeForecast(sinkingFunds, savingsPool, emergencyFloor, month
 
     totalSeries.push(total);
     growthOnlySeries.push(growthOnly);
+    lifestyleSeries.push(lifestyleBalance);
   }
 
-  return { labels, totalSeries, growthOnlySeries };
+  return { labels, totalSeries, growthOnlySeries, lifestyleSeries };
 }

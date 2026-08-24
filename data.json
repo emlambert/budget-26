@@ -1,46 +1,236 @@
 {
   "takeHome": 2912,
   "budgetItems": [
-    { "name": "Bills", "type": "Spending", "amount": 830, "notes": "Your share of fixed household bills" },
-    { "name": "Savings", "type": "Savings", "amount": 850, "notes": "Feeds the Sinking Funds" },
-    { "name": "Investing", "type": "Savings", "amount": 100, "notes": "ETFs — separate from sinking funds, long horizon" },
-    { "name": "Groceries", "type": "Spending", "amount": 300, "notes": "" },
-    { "name": "Home (purchases pot)", "type": "Spending", "amount": 100, "notes": "Ongoing home-related spending pot" },
-    { "name": "Shopping", "type": "Spending", "amount": 170, "notes": "Clothing etc" },
-    { "name": "Personal care", "type": "Spending", "amount": 68, "notes": "Makeup, toiletries etc" },
-    { "name": "Eating out", "type": "Spending", "amount": 150, "notes": "" },
-    { "name": "Gifts", "type": "Spending", "amount": 100, "notes": "Birthday & Christmas gifts" },
-    { "name": "Transport", "type": "Spending", "amount": 85, "notes": "" },
-    { "name": "Personal bills (insurance + phone)", "type": "Spending", "amount": 109, "notes": "Insurance £35 + phone £7 + Hot Yoga membership £67" },
-    { "name": "Activities/treats", "type": "Spending", "amount": 50, "notes": "" }
+    {
+      "name": "Bills",
+      "type": "Spending",
+      "amount": 830,
+      "notes": "Your share of fixed household bills"
+    },
+    {
+      "name": "Savings",
+      "type": "Savings",
+      "amount": 850,
+      "notes": "Feeds the Sinking Funds"
+    },
+    {
+      "name": "Investing",
+      "type": "Savings",
+      "amount": 100,
+      "notes": "ETFs \u2014 separate from sinking funds, long horizon"
+    },
+    {
+      "name": "Groceries",
+      "type": "Spending",
+      "amount": 300,
+      "notes": ""
+    },
+    {
+      "name": "Home (purchases pot)",
+      "type": "Spending",
+      "amount": 100,
+      "notes": "Ongoing home-related spending pot"
+    },
+    {
+      "name": "Shopping",
+      "type": "Spending",
+      "amount": 170,
+      "notes": "Clothing etc"
+    },
+    {
+      "name": "Personal care",
+      "type": "Spending",
+      "amount": 68,
+      "notes": "Makeup, toiletries etc"
+    },
+    {
+      "name": "Eating out",
+      "type": "Spending",
+      "amount": 150,
+      "notes": ""
+    },
+    {
+      "name": "Gifts",
+      "type": "Spending",
+      "amount": 100,
+      "notes": "Birthday & Christmas gifts"
+    },
+    {
+      "name": "Transport",
+      "type": "Spending",
+      "amount": 85,
+      "notes": ""
+    },
+    {
+      "name": "Personal bills (insurance + phone)",
+      "type": "Spending",
+      "amount": 109,
+      "notes": "Insurance \u00a335 + phone \u00a37 + Hot Yoga membership \u00a367"
+    },
+    {
+      "name": "Activities/treats",
+      "type": "Spending",
+      "amount": 50,
+      "notes": ""
+    }
   ],
   "sinkingFunds": [
-    { "name": "Crete spending money", "category": "Trip", "notes": "€250 boat trip (2 Sep) + eating out ~7 nights. Flights & accommodation already paid.", "target": 455, "targetDate": "2026-08-31", "balance": 455 },
-    { "name": "Christmas", "category": "Occasion", "notes": "Potential travel to Germany", "target": 300, "targetDate": "2026-12-20", "balance": 300 },
-    { "name": "Sri Lanka accommodation", "category": "Trip", "notes": "Accommodation totals £600 each; already had £180 in gifts.", "target": 510, "targetDate": "2027-01-01", "balance": 120 },
-    { "name": "Sri Lanka spending money", "category": "Trip", "notes": "Private driver + tips + entries (£300) + eating out (£20/day).", "target": 1000, "targetDate": "2027-01-01", "balance": 200 },
-    { "name": "Izzy's Hen Do", "category": "Occasion", "notes": "£265 accommodation + activities, £80 transport", "target": 345, "targetDate": "2027-05-01", "balance": 0 },
-    { "name": "Katie's Hen Do", "category": "Occasion", "notes": "£300 hen do, £60 transport", "target": 360, "targetDate": "2027-05-01", "balance": 0 },
-    { "name": "Next year's holiday (2027)", "category": "Trip", "notes": "Destination TBC — placeholder", "target": 1000, "targetDate": "2027-07-01", "balance": 0 },
-    { "name": "Rueben & Amy's Wedding", "category": "Occasion", "notes": "£100 accommodation, £50 gift, £50 transport", "target": 200, "targetDate": "2027-07-15", "balance": 0 },
-    { "name": "Izzy & Oscar's Wedding", "category": "Occasion", "notes": "£75 accommodation, £50 transport, £50 gift", "target": 175, "targetDate": "2027-08-01", "balance": 0 },
-    { "name": "Laura & Katie's Wedding", "category": "Occasion", "notes": "£75 accommodation, £50 transport, £50 gift", "target": 175, "targetDate": "2027-08-01", "balance": 0 },
-    { "name": "Emergency fund", "category": "Buffer", "notes": "3-month milestone = £3,390. Target below is the 6-month stretch goal.", "target": 6780, "targetDate": null, "balance": 1000 },
-    { "name": "Baby / maternity fund", "category": "Long-term", "notes": "Trying from Jan 2027. No fixed target yet.", "target": null, "targetDate": null, "balance": 0 },
-    { "name": "Car fund", "category": "Long-term", "notes": "~5 years out.", "target": 13000, "targetDate": "2031-08-01", "balance": 0 }
+    {
+      "name": "Crete spending money",
+      "category": "Trip",
+      "notes": "\u20ac250 boat trip (2 Sep) + eating out ~7 nights. Flights & accommodation already paid.",
+      "target": 455,
+      "targetDate": "2026-08-31",
+      "balance": 455
+    },
+    {
+      "name": "Christmas",
+      "category": "Occasion",
+      "notes": "Potential travel to Germany",
+      "target": 300,
+      "targetDate": "2026-12-20",
+      "balance": 300
+    },
+    {
+      "name": "Sri Lanka accommodation",
+      "category": "Trip",
+      "notes": "Accommodation totals \u00a3600 each; already had \u00a3180 in gifts.",
+      "target": 510,
+      "targetDate": "2027-01-01",
+      "balance": 120
+    },
+    {
+      "name": "Sri Lanka spending money",
+      "category": "Trip",
+      "notes": "Private driver + tips + entries (\u00a3300) + eating out (\u00a320/day).",
+      "target": 1000,
+      "targetDate": "2027-01-01",
+      "balance": 200
+    },
+    {
+      "name": "Izzy's Hen Do",
+      "category": "Occasion",
+      "notes": "\u00a3265 accommodation + activities, \u00a380 transport",
+      "target": 345,
+      "targetDate": "2027-05-01",
+      "balance": 0
+    },
+    {
+      "name": "Katie's Hen Do",
+      "category": "Occasion",
+      "notes": "\u00a3300 hen do, \u00a360 transport",
+      "target": 360,
+      "targetDate": "2027-05-01",
+      "balance": 0
+    },
+    {
+      "name": "Next year's holiday (2027)",
+      "category": "Trip",
+      "notes": "Destination TBC \u2014 placeholder",
+      "target": 1000,
+      "targetDate": "2027-07-01",
+      "balance": 0
+    },
+    {
+      "name": "Rueben & Amy's Wedding",
+      "category": "Occasion",
+      "notes": "\u00a3100 accommodation, \u00a350 gift, \u00a350 transport",
+      "target": 200,
+      "targetDate": "2027-07-15",
+      "balance": 0
+    },
+    {
+      "name": "Izzy & Oscar's Wedding",
+      "category": "Occasion",
+      "notes": "\u00a375 accommodation, \u00a350 transport, \u00a350 gift",
+      "target": 175,
+      "targetDate": "2027-08-01",
+      "balance": 0
+    },
+    {
+      "name": "Laura & Katie's Wedding",
+      "category": "Occasion",
+      "notes": "\u00a375 accommodation, \u00a350 transport, \u00a350 gift",
+      "target": 175,
+      "targetDate": "2027-08-01",
+      "balance": 0
+    },
+    {
+      "name": "Emergency fund",
+      "category": "Buffer",
+      "notes": "3-month milestone = \u00a33,390. Target below is the 6-month stretch goal.",
+      "target": 6780,
+      "targetDate": null,
+      "balance": 1000
+    },
+    {
+      "name": "Baby / maternity fund",
+      "category": "Long-term",
+      "notes": "Trying from Jan 2027. No fixed target yet.",
+      "target": null,
+      "targetDate": null,
+      "balance": 0
+    },
+    {
+      "name": "Car fund",
+      "category": "Long-term",
+      "notes": "~5 years out.",
+      "target": 13000,
+      "targetDate": "2031-08-01",
+      "balance": 0
+    }
   ],
   "consideringGoals": [
-    { "considering": true, "name": "", "category": "Trip", "notes": "", "target": null, "targetDate": "2026-09-01" }
+    {
+      "considering": true,
+      "name": "",
+      "category": "Trip",
+      "notes": "",
+      "target": null,
+      "targetDate": "2026-09-01"
+    }
   ],
   "annualSpendingPlan": [
-    { "category": "Big holiday(s) abroad", "annualAmount": 1800, "notes": "1-2 trips like Sri Lanka/Crete — separate from named Sinking Funds pots once a specific trip is booked" },
-    { "category": "Weekend & short trips", "annualAmount": 600, "notes": "A few UK/nearby getaways through the year" },
-    { "category": "Christmas & festive extras", "annualAmount": 400, "notes": "On top of the monthly Gifts line — travel, extra food, decorations" },
-    { "category": "Birthdays & celebrations", "annualAmount": 250, "notes": "Yours, Louis's, and marking occasions out" },
-    { "category": "Home & garden projects", "annualAmount": 500, "notes": "Bulbs, tools, a new bed or border, small home upgrades" },
-    { "category": "Wardrobe refresh", "annualAmount": 300, "notes": "Beyond routine Shopping — seasonal or occasion pieces" },
-    { "category": "Days out & experiences", "annualAmount": 300, "notes": "Concerts, shows, one-off outings" },
-    { "category": "Miggy (vet, grooming, boarding)", "annualAmount": 250, "notes": "Routine vet visits plus a cushion for the unexpected" }
+    {
+      "category": "Big holiday(s) abroad",
+      "annualAmount": 0,
+      "notes": "Already covered by named Sinking Funds pots (Crete, Sri Lanka, next year's holiday) \u2014 raise this once those clear and you want a fresh, unnamed trip fund"
+    },
+    {
+      "category": "Weekend & short trips",
+      "annualAmount": 600,
+      "notes": "A few UK/nearby getaways through the year"
+    },
+    {
+      "category": "Christmas & festive extras",
+      "annualAmount": 400,
+      "notes": "On top of the monthly Gifts line \u2014 travel, extra food, decorations"
+    },
+    {
+      "category": "Birthdays & celebrations",
+      "annualAmount": 250,
+      "notes": "Yours, Louis's, and marking occasions out"
+    },
+    {
+      "category": "Home & garden projects",
+      "annualAmount": 500,
+      "notes": "Bulbs, tools, a new bed or border, small home upgrades"
+    },
+    {
+      "category": "Wardrobe refresh",
+      "annualAmount": 300,
+      "notes": "Beyond routine Shopping \u2014 seasonal or occasion pieces"
+    },
+    {
+      "category": "Days out & experiences",
+      "annualAmount": 300,
+      "notes": "Concerts, shows, one-off outings"
+    },
+    {
+      "category": "Miggy (vet, grooming, boarding)",
+      "annualAmount": 250,
+      "notes": "Routine vet visits plus a cushion for the unexpected"
+    }
   ],
   "monthlySavingsAllocation": {
     "emergencyFloor": 100,
@@ -48,10 +238,34 @@
     "carMonthly": 0
   },
   "savingsTracker": [
-    { "quarter": "Q3 2026", "quarterEnd": "2026-09-30", "balance": null, "contributions": null, "withdrawn": null },
-    { "quarter": "Q4 2026", "quarterEnd": "2026-12-31", "balance": null, "contributions": null, "withdrawn": null },
-    { "quarter": "Q1 2027", "quarterEnd": "2027-03-31", "balance": null, "contributions": null, "withdrawn": null },
-    { "quarter": "Q2 2027", "quarterEnd": "2027-06-30", "balance": null, "contributions": null, "withdrawn": null }
+    {
+      "quarter": "Q3 2026",
+      "quarterEnd": "2026-09-30",
+      "balance": null,
+      "contributions": null,
+      "withdrawn": null
+    },
+    {
+      "quarter": "Q4 2026",
+      "quarterEnd": "2026-12-31",
+      "balance": null,
+      "contributions": null,
+      "withdrawn": null
+    },
+    {
+      "quarter": "Q1 2027",
+      "quarterEnd": "2027-03-31",
+      "balance": null,
+      "contributions": null,
+      "withdrawn": null
+    },
+    {
+      "quarter": "Q2 2027",
+      "quarterEnd": "2027-06-30",
+      "balance": null,
+      "contributions": null,
+      "withdrawn": null
+    }
   ],
   "lastUpdated": "2026-08-22"
 }
