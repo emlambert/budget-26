@@ -19,6 +19,31 @@
     <div class="masthead-sub">A running account of what's coming in, what's going out, and what's actually growing.</div>
   </header>
 
+  <section>
+    <h2 class="section-title"><span class="eyebrow">Growing</span> Investments</h2>
+    <p class="note" style="margin-top:0" id="inv-platform">—</p>
+    <div class="card-grid">
+      <div class="stat-card"><div class="num" id="inv-total">—</div><div class="lbl">Current value (as of <span id="inv-asof">—</span>)</div></div>
+      <div class="stat-card"><div class="num" id="inv-proj-5yr">—</div><div class="lbl">Projected in 5 years*</div></div>
+      <div class="stat-card"><div class="num" id="inv-proj-10yr">—</div><div class="lbl">Projected in 10 years*</div></div>
+    </div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr><th>Holding</th><th>Value</th><th>Actual %</th><th>Target %</th><th>Drift</th></tr></thead>
+        <tbody id="inv-holdings-body"></tbody>
+      </table>
+    </div>
+    <div class="considering-row" style="margin-top:0.75rem; border:none; padding:0">
+      <label style="font-size:0.82rem">Monthly contribution
+        <input type="number" id="inv-contribution" style="width:80px; margin-left:0.4rem; border:1px solid var(--line); border-radius:3px; padding:0.3rem; font-family:var(--font-mono);">
+      </label>
+      <label style="font-size:0.82rem">Assumed annual return %
+        <input type="number" step="0.1" id="inv-return" style="width:70px; margin-left:0.4rem; border:1px solid var(--line); border-radius:3px; padding:0.3rem; font-family:var(--font-mono);">
+      </label>
+    </div>
+    <p class="note">*Planning estimate only, using the assumed return above — not a forecast or guarantee. Past performance (including recent gains shown in your portfolio) isn't a reliable guide to future returns; this uses a conservative long-run assumption instead. VFEG is currently running well under its 10% target — new contributions tilted that way is one common way people rebalance without selling, though that's a general technique, not advice on your specific situation.</p>
+  </section>
+
   <div class="bloom-card">
     <svg class="bloom-svg" viewBox="0 0 100 100" aria-hidden="true">
       <g transform="translate(50,50)">

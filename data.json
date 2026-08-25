@@ -267,5 +267,33 @@
       "withdrawn": null
     }
   ],
-  "lastUpdated": "2026-08-22"
+  "lastUpdated": "2026-08-22",
+  "investments": {
+    "platform": "InvestEngine",
+    "accountType": "Self-managed ISA",
+    "portfolioName": "First Portfolio",
+    "monthlyContribution": 100,
+    "expectedAnnualReturnPct": 6.5,
+    "asOf": "2026-08-01",
+    "holdings": [
+      {
+        "name": "Vanguard S&P 500",
+        "ticker": "VUAG",
+        "value": 1350.59,
+        "targetAllocationPct": 80
+      },
+      {
+        "name": "iShares Physical Gold",
+        "ticker": "SGLN",
+        "value": 143.93,
+        "targetAllocationPct": 10
+      },
+      {
+        "name": "Vanguard FTSE Emerging Markets",
+        "ticker": "VFEG",
+        "value": 71.38,
+        "targetAllocationPct": 10
+      }
+    ]
+  }
 }

@@ -1,5 +1,6 @@
 import { GBP } from './utils.js';
 import { computeForecast } from './forecast.js';
+import { computeInvestmentProjection, portfolioTotal } from './investments.js';
 
 let pieChart, trackerChart, forecastChart;
 
@@ -22,7 +23,7 @@ export function renderAllCharts(data, totals) {
   }
   try { renderPie(data.budgetItems); } catch (e) { console.error('pie chart failed', e); chartFallback('pie-chart'); }
   try { renderTracker(data.savingsTracker); } catch (e) { console.error('tracker chart failed', e); chartFallback('tracker-chart'); }
-  try { renderForecast(data.sinkingFunds, totals.savingsAmt, data.monthlySavingsAllocation.emergencyFloor, totals.annualPlanMonthly); } catch (e) { console.error('forecast chart failed', e); chartFallback('forecast-chart'); }
+  try { renderForecast(data.sinkingFunds, totals.savingsAmt, data.monthlySavingsAllocation.emergencyFloor, totals.annualPlanMonthly, data.investments); } catch (e) { console.error('forecast chart failed', e); chartFallback('forecast-chart'); }
 }
 
 function renderPie(items) {
@@ -77,15 +78,30 @@ function renderTracker(tracker) {
   });
 }
 
-function renderForecast(sinkingFunds, savingsPool, emergencyFloor, annualPlanMonthly) {
+function renderForecast(sinkingFunds, savingsPool, emergencyFloor, annualPlanMonthly, investments) {
   const ctx = document.getElementById('forecast-chart');
   const { labels, totalSeries, growthOnlySeries, lifestyleSeries } = computeForecast(sinkingFunds, savingsPool, emergencyFloor, annualPlanMonthly, 24);
+  const investmentSeries = computeInvestmentProjection(
+    portfolioTotal(investments), investments.monthlyContribution, investments.expectedAnnualReturnPct, 24
+  );
+  const netWorthSeries = totalSeries.map((v, i) => v + investmentSeries[i]);
+
   if (forecastChart) forecastChart.destroy();
   forecastChart = new Chart(ctx, {
     type: 'line',
     data: {
       labels,
       datasets: [
+        {
+          label: 'Total net worth (all pots + investments)',
+          data: netWorthSeries,
+          borderColor: '#1B3A34',
+          backgroundColor: 'rgba(27,58,52,0.06)',
+          borderWidth: 2.5,
+          fill: false,
+          tension: 0.15,
+          pointRadius: 0
+        },
         {
           label: 'All sinking funds (grows, then dips when a trip/wedding is paid for)',
           data: totalSeries,
@@ -112,6 +128,16 @@ function renderForecast(sinkingFunds, savingsPool, emergencyFloor, annualPlanMon
           borderDash: [4, 3],
           fill: true,
           tension: 0.1,
+          pointRadius: 0
+        },
+        {
+          label: 'Investments (compounding, planning estimate)',
+          data: investmentSeries,
+          borderColor: '#3C6E96',
+          backgroundColor: 'rgba(60,110,150,0.08)',
+          borderDash: [2, 2],
+          fill: true,
+          tension: 0.15,
           pointRadius: 0
         }
       ]

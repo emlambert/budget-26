@@ -1,5 +1,6 @@
 import { computeAllFunds, computeTotals } from './computeFunds.js';
 import { computeAnnualPlanMonthly, renderAnnualPlan } from './annualPlan.js';
+import { renderInvestments, portfolioTotal } from './investments.js';
 import { renderDashboard } from './dashboard.js';
 import { renderSinkingFunds } from './sinkingFunds.js';
 import { renderAllocation } from './allocation.js';
@@ -11,6 +12,7 @@ function renderAll(data) {
   const { monthlyTotal: annualPlanMonthly } = computeAnnualPlanMonthly(data.annualSpendingPlan);
   const totals = computeTotals(funds, data.budgetItems, data.takeHome, annualPlanMonthly);
 
+  renderInvestments(data, () => renderAll(data));
   renderDashboard(totals, data.takeHome);
   renderSinkingFunds(funds, totals);
   renderAllocation(data, totals);
