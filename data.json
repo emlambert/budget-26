@@ -84,20 +84,12 @@
       "balance": 455
     },
     {
-      "name": "Christmas",
-      "category": "Occasion",
-      "notes": "Potential travel to Germany",
-      "target": 300,
-      "targetDate": "2026-12-20",
-      "balance": 300
-    },
-    {
       "name": "Sri Lanka accommodation",
       "category": "Trip",
       "notes": "Honeymoon accommodation \u2014 totals \u00a3600 each; already had \u00a3180 in gifts.",
       "target": 510,
       "targetDate": "2027-01-01",
-      "balance": 120
+      "balance": 190
     },
     {
       "name": "Sri Lanka spending money",
