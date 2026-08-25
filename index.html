@@ -19,159 +19,182 @@
     <div class="masthead-sub">A running account of what's coming in, what's going out, and what's actually growing.</div>
   </header>
 
-  <section>
-    <h2 class="section-title"><span class="eyebrow">Growing</span> Investments</h2>
-    <p class="note" style="margin-top:0" id="inv-platform">—</p>
-    <div class="card-grid">
-      <div class="stat-card"><div class="num" id="inv-total">—</div><div class="lbl">Current value (as of <span id="inv-asof">—</span>)</div></div>
-      <div class="stat-card"><div class="num" id="inv-proj-5yr">—</div><div class="lbl">Projected in 5 years*</div></div>
-      <div class="stat-card"><div class="num" id="inv-proj-10yr">—</div><div class="lbl">Projected in 10 years*</div></div>
-    </div>
-    <div style="overflow-x:auto">
-      <table>
-        <thead><tr><th>Holding</th><th>Value</th><th>Actual %</th><th>Target %</th><th>Drift</th></tr></thead>
-        <tbody id="inv-holdings-body"></tbody>
-      </table>
-    </div>
-    <div class="considering-row" style="margin-top:0.75rem; border:none; padding:0">
-      <label style="font-size:0.82rem">Monthly contribution
-        <input type="number" id="inv-contribution" style="width:80px; margin-left:0.4rem; border:1px solid var(--line); border-radius:3px; padding:0.3rem; font-family:var(--font-mono);">
-      </label>
-      <label style="font-size:0.82rem">Assumed annual return %
-        <input type="number" step="0.1" id="inv-return" style="width:70px; margin-left:0.4rem; border:1px solid var(--line); border-radius:3px; padding:0.3rem; font-family:var(--font-mono);">
-      </label>
-    </div>
-    <p class="note">*Planning estimate only, using the assumed return above — not a forecast or guarantee. Past performance (including recent gains shown in your portfolio) isn't a reliable guide to future returns; this uses a conservative long-run assumption instead. VFEG is currently running well under its 10% target — new contributions tilted that way is one common way people rebalance without selling, though that's a general technique, not advice on your specific situation.</p>
-  </section>
+  <nav class="pagenav" id="pagenav">
+    <button data-page="overview" class="pagenav-btn">Overview</button>
+    <button data-page="commitments" class="pagenav-btn">Commitments</button>
+    <button data-page="allocation" class="pagenav-btn">Allocation</button>
+    <button data-page="investments" class="pagenav-btn">Investments</button>
+    <button data-page="forecast" class="pagenav-btn">Forecast</button>
+  </nav>
 
-  <div class="bloom-card">
-    <svg class="bloom-svg" viewBox="0 0 100 100" aria-hidden="true">
-      <g transform="translate(50,50)">
-        <ellipse class="bloom-petal" data-i="0" cx="0" cy="-28" rx="10" ry="20" transform="rotate(0)"/>
-        <ellipse class="bloom-petal" data-i="1" cx="0" cy="-28" rx="10" ry="20" transform="rotate(45)"/>
-        <ellipse class="bloom-petal" data-i="2" cx="0" cy="-28" rx="10" ry="20" transform="rotate(90)"/>
-        <ellipse class="bloom-petal" data-i="3" cx="0" cy="-28" rx="10" ry="20" transform="rotate(135)"/>
-        <ellipse class="bloom-petal" data-i="4" cx="0" cy="-28" rx="10" ry="20" transform="rotate(180)"/>
-        <ellipse class="bloom-petal" data-i="5" cx="0" cy="-28" rx="10" ry="20" transform="rotate(225)"/>
-        <ellipse class="bloom-petal" data-i="6" cx="0" cy="-28" rx="10" ry="20" transform="rotate(270)"/>
-        <ellipse class="bloom-petal" data-i="7" cx="0" cy="-28" rx="10" ry="20" transform="rotate(315)"/>
-        <circle r="9" fill="#A97F2E"/>
-      </g>
-    </svg>
-    <div class="bloom-text">
-      <div class="figure" id="bloom-figure">—</div>
-      <div class="label">True growth savings rate</div>
-      <div class="sub" id="bloom-sub"></div>
+  <!-- ============ PAGE: OVERVIEW ============ -->
+  <div class="page" id="page-overview">
+    <div class="bloom-card">
+      <svg class="bloom-svg" viewBox="0 0 100 100" aria-hidden="true">
+        <g transform="translate(50,50)">
+          <ellipse class="bloom-petal" data-i="0" cx="0" cy="-28" rx="10" ry="20" transform="rotate(0)"/>
+          <ellipse class="bloom-petal" data-i="1" cx="0" cy="-28" rx="10" ry="20" transform="rotate(45)"/>
+          <ellipse class="bloom-petal" data-i="2" cx="0" cy="-28" rx="10" ry="20" transform="rotate(90)"/>
+          <ellipse class="bloom-petal" data-i="3" cx="0" cy="-28" rx="10" ry="20" transform="rotate(135)"/>
+          <ellipse class="bloom-petal" data-i="4" cx="0" cy="-28" rx="10" ry="20" transform="rotate(180)"/>
+          <ellipse class="bloom-petal" data-i="5" cx="0" cy="-28" rx="10" ry="20" transform="rotate(225)"/>
+          <ellipse class="bloom-petal" data-i="6" cx="0" cy="-28" rx="10" ry="20" transform="rotate(270)"/>
+          <ellipse class="bloom-petal" data-i="7" cx="0" cy="-28" rx="10" ry="20" transform="rotate(315)"/>
+          <circle r="9" fill="#A97F2E"/>
+        </g>
+      </svg>
+      <div class="bloom-text">
+        <div class="figure" id="bloom-figure">—</div>
+        <div class="label">True growth savings rate</div>
+        <div class="sub" id="bloom-sub"></div>
+      </div>
     </div>
+
+    <section>
+      <h2 class="section-title"><span class="eyebrow">Overview</span> Dashboard</h2>
+      <div class="card-grid">
+        <div class="stat-card"><div class="num" id="stat-takehome">—</div><div class="lbl">Monthly take-home</div></div>
+        <div class="stat-card"><div class="num" id="stat-savingsrate">—</div><div class="lbl">Headline savings rate</div></div>
+        <div class="stat-card"><div class="num" id="stat-fundsbalance">—</div><div class="lbl">Total sinking funds balance</div></div>
+        <div class="stat-card"><div class="num" id="stat-truegrowth">—</div><div class="lbl">True growth savings rate</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title"><span class="eyebrow">Where it goes</span> Monthly spending</h2>
+      <div class="chart-wrap">
+        <canvas id="pie-chart" height="220"></canvas>
+      </div>
+    </section>
   </div>
 
-  <section>
-    <h2 class="section-title"><span class="eyebrow">Overview</span> Dashboard</h2>
-    <div class="card-grid">
-      <div class="stat-card"><div class="num" id="stat-takehome">—</div><div class="lbl">Monthly take-home</div></div>
-      <div class="stat-card"><div class="num" id="stat-savingsrate">—</div><div class="lbl">Headline savings rate</div></div>
-      <div class="stat-card"><div class="num" id="stat-fundsbalance">—</div><div class="lbl">Total sinking funds balance</div></div>
-      <div class="stat-card"><div class="num" id="stat-truegrowth">—</div><div class="lbl">True growth savings rate</div></div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="section-title"><span class="eyebrow">Where it goes</span> Monthly spending</h2>
-    <div class="chart-wrap">
-      <canvas id="pie-chart" height="220"></canvas>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="section-title"><span class="eyebrow">Register</span> Sinking funds</h2>
-    <div style="overflow-x:auto">
-      <table>
-        <thead>
-          <tr>
-            <th>Pot</th><th>Fund type</th><th>Notes</th><th>Target</th><th>By</th>
-            <th>Balance</th><th>Still needed</th><th>£/mo</th><th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="funds-body"></tbody>
-        <tfoot>
-          <tr class="total-row">
-            <td>Total</td><td></td><td></td>
-            <td class="num-cell" id="funds-total-target">—</td><td></td>
-            <td class="num-cell" id="funds-total-balance">—</td><td></td>
-            <td class="num-cell" id="funds-total-monthly">—</td><td></td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-    <p class="note">Of which committed to <strong>Spending</strong> (trips/occasions): <span id="funds-spending-monthly">—</span>/mo &nbsp;·&nbsp; committed to <strong>Growth</strong> (buffer/long-term): <span id="funds-growth-monthly">—</span>/mo</p>
-  </section>
-
-  <section>
-    <h2 class="section-title"><span class="eyebrow">Lifestyle</span> Annual spending plan</h2>
-    <p class="note" style="margin-top:0">A yearly ballpark for the things you're happy to spend on — separate from the named, dated goals in the Sinking Funds register above. Counted as committed spending, same as trips and weddings, so it reduces your true growth rate honestly rather than hiding inside it.</p>
-    <div style="overflow-x:auto">
-      <table>
-        <thead>
-          <tr><th>Category</th><th>Notes</th><th>£/year</th><th>£/month</th><th></th></tr>
-        </thead>
-        <tbody id="annual-plan-body"></tbody>
-        <tfoot>
-          <tr class="total-row">
-            <td>Total</td><td></td>
-            <td class="num-cell" id="annual-plan-total-year">—</td>
-            <td class="num-cell" id="annual-plan-total-month">—</td>
-            <td></td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-    <button id="add-annual" type="button" style="margin-top:0.75rem; font-family: var(--font-mono); font-size: 0.78rem; border: 1px solid var(--line); background: #fff; border-radius: 3px; padding: 0.4rem 0.8rem; cursor: pointer;">+ add category</button>
-  </section>
-
-  <section>
-    <h2 class="section-title"><span class="eyebrow">Priorities</span> Monthly savings allocation</h2>
-    <div class="card-grid">
-      <div class="stat-card"><div class="num" id="alloc-total">—</div><div class="lbl">Total monthly savings</div></div>
-      <div class="stat-card"><div class="num" id="alloc-nearterm">—</div><div class="lbl">Near-term pots (auto)</div></div>
-      <div class="stat-card"><div class="num" id="alloc-leftover">—</div><div class="lbl">Long-term leftover</div></div>
-      <div class="stat-card"><div class="num" id="alloc-floor">—</div><div class="lbl">Emergency protected minimum</div></div>
-    </div>
-    <p>Recommended to Emergency fund this month: <strong id="alloc-emergency">—</strong></p>
-    <div id="alloc-banner"></div>
-  </section>
-
-  <section>
-    <h2 class="section-title"><span class="eyebrow">Play it out</span> Considering a new goal?</h2>
-    <div class="considering-box">
-      <p class="note" style="margin-top:0">Tick a goal to see its effect on the totals below — nothing here is saved until you ask Claude to commit it to the register above.</p>
-      <div id="considering-rows"></div>
-      <button id="add-considering" type="button" style="margin-top:0.75rem; font-family: var(--font-mono); font-size: 0.78rem; border: 1px solid var(--line); background: #fff; border-radius: 3px; padding: 0.4rem 0.8rem; cursor: pointer;">+ add another goal</button>
-      <div class="whatif-total">
-        <span>What-if total (ticked only)</span>
-        <strong id="whatif-total">—</strong>
+  <!-- ============ PAGE: COMMITMENTS ============ -->
+  <div class="page" id="page-commitments">
+    <section>
+      <h2 class="section-title"><span class="eyebrow">Register</span> Sinking funds</h2>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Pot</th><th>Fund type</th><th>Notes</th><th>Target</th><th>By</th>
+              <th>Balance</th><th>Still needed</th><th>£/mo</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="funds-body"></tbody>
+          <tfoot>
+            <tr class="total-row">
+              <td>Total</td><td></td><td></td>
+              <td class="num-cell" id="funds-total-target">—</td><td></td>
+              <td class="num-cell" id="funds-total-balance">—</td><td></td>
+              <td class="num-cell" id="funds-total-monthly">—</td><td></td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
-      <div class="whatif-total">
-        <span>Projected true growth rate if committed</span>
-        <strong id="whatif-truegrowth">—</strong>
+      <p class="note">Of which committed to <strong>Spending</strong> (trips/occasions): <span id="funds-spending-monthly">—</span>/mo &nbsp;·&nbsp; committed to <strong>Growth</strong> (buffer/long-term): <span id="funds-growth-monthly">—</span>/mo</p>
+    </section>
+
+    <section>
+      <h2 class="section-title"><span class="eyebrow">Lifestyle</span> Annual spending plan</h2>
+      <p class="note" style="margin-top:0">A yearly ballpark for the things you're happy to spend on — separate from the named, dated goals above. Counted as committed spending, same as trips and weddings, so it reduces your true growth rate honestly rather than hiding inside it.</p>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr><th>Category</th><th>Notes</th><th>£/year</th><th>£/month</th><th></th></tr>
+          </thead>
+          <tbody id="annual-plan-body"></tbody>
+          <tfoot>
+            <tr class="total-row">
+              <td>Total</td><td></td>
+              <td class="num-cell" id="annual-plan-total-year">—</td>
+              <td class="num-cell" id="annual-plan-total-month">—</td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
-    </div>
-  </section>
+      <button id="add-annual" type="button" style="margin-top:0.75rem; font-family: var(--font-mono); font-size: 0.78rem; border: 1px solid var(--line); background: #fff; border-radius: 3px; padding: 0.4rem 0.8rem; cursor: pointer;">+ add category</button>
+    </section>
 
-  <section>
-    <h2 class="section-title"><span class="eyebrow">Forecast</span> Savings growth & depletion over time</h2>
-    <div class="chart-wrap">
-      <canvas id="forecast-chart" height="220"></canvas>
-    </div>
-    <p class="note">Projects each pot forward using its own monthly contribution. Committed trip/wedding pots (gold) dip to zero the month they're due — that's the money actually being spent, not lost. The green line (Emergency, Baby, Car) never dips — it's the part that's genuinely building.</p>
-  </section>
+    <section>
+      <h2 class="section-title"><span class="eyebrow">Play it out</span> Considering a new goal?</h2>
+      <div class="considering-box">
+        <p class="note" style="margin-top:0">Tick a goal to see its effect on the totals below — nothing here is saved until you ask Claude to commit it to the register above.</p>
+        <div id="considering-rows"></div>
+        <button id="add-considering" type="button" style="margin-top:0.75rem; font-family: var(--font-mono); font-size: 0.78rem; border: 1px solid var(--line); background: #fff; border-radius: 3px; padding: 0.4rem 0.8rem; cursor: pointer;">+ add another goal</button>
+        <div class="whatif-total">
+          <span>What-if total (ticked only)</span>
+          <strong id="whatif-total">—</strong>
+        </div>
+        <div class="whatif-total">
+          <span>Projected true growth rate if committed</span>
+          <strong id="whatif-truegrowth">—</strong>
+        </div>
+      </div>
+    </section>
+  </div>
 
-  <section>
-    <h2 class="section-title"><span class="eyebrow">Long view</span> Savings tracker</h2>
-    <div class="chart-wrap">
-      <canvas id="tracker-chart" height="200"></canvas>
-    </div>
-    <p class="note">Update your real quarter-end balance in <code>data.json</code> (ask Claude) to see whether the pot is actually growing.</p>
-  </section>
+  <!-- ============ PAGE: ALLOCATION ============ -->
+  <div class="page" id="page-allocation">
+    <section>
+      <h2 class="section-title"><span class="eyebrow">Priorities</span> Monthly savings allocation</h2>
+      <div class="card-grid">
+        <div class="stat-card"><div class="num" id="alloc-total">—</div><div class="lbl">Total monthly savings</div></div>
+        <div class="stat-card"><div class="num" id="alloc-nearterm">—</div><div class="lbl">Near-term pots (auto)</div></div>
+        <div class="stat-card"><div class="num" id="alloc-leftover">—</div><div class="lbl">Long-term leftover</div></div>
+        <div class="stat-card"><div class="num" id="alloc-floor">—</div><div class="lbl">Emergency protected minimum</div></div>
+      </div>
+      <p>Recommended to Emergency fund this month: <strong id="alloc-emergency">—</strong></p>
+      <div id="alloc-banner"></div>
+    </section>
+  </div>
+
+  <!-- ============ PAGE: INVESTMENTS ============ -->
+  <div class="page" id="page-investments">
+    <section>
+      <h2 class="section-title"><span class="eyebrow">Growing</span> Investments</h2>
+      <p class="note" style="margin-top:0" id="inv-platform">—</p>
+      <div class="card-grid">
+        <div class="stat-card"><div class="num" id="inv-total">—</div><div class="lbl">Current value (as of <span id="inv-asof">—</span>)</div></div>
+        <div class="stat-card"><div class="num" id="inv-proj-5yr">—</div><div class="lbl">Projected in 5 years*</div></div>
+        <div class="stat-card"><div class="num" id="inv-proj-10yr">—</div><div class="lbl">Projected in 10 years*</div></div>
+      </div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>Holding</th><th>Value</th><th>Actual %</th><th>Target %</th><th>Drift</th></tr></thead>
+          <tbody id="inv-holdings-body"></tbody>
+        </table>
+      </div>
+      <div class="considering-row" style="margin-top:0.75rem; border:none; padding:0">
+        <label style="font-size:0.82rem">Monthly contribution
+          <input type="number" id="inv-contribution" style="width:80px; margin-left:0.4rem; border:1px solid var(--line); border-radius:3px; padding:0.3rem; font-family:var(--font-mono);">
+        </label>
+        <label style="font-size:0.82rem">Assumed annual return %
+          <input type="number" step="0.1" id="inv-return" style="width:70px; margin-left:0.4rem; border:1px solid var(--line); border-radius:3px; padding:0.3rem; font-family:var(--font-mono);">
+        </label>
+      </div>
+      <p class="note">*Planning estimate only, using the assumed return above — not a forecast or guarantee. Past performance (including recent gains shown in your portfolio) isn't a reliable guide to future returns; this uses a conservative long-run assumption instead.</p>
+    </section>
+  </div>
+
+  <!-- ============ PAGE: FORECAST ============ -->
+  <div class="page" id="page-forecast">
+    <section>
+      <h2 class="section-title"><span class="eyebrow">Forecast</span> Savings growth & depletion over time</h2>
+      <div class="chart-wrap">
+        <canvas id="forecast-chart" height="220"></canvas>
+      </div>
+      <p class="note">Projects each pot forward using its own monthly contribution. Committed trip/wedding pots (gold) dip to zero the month they're due — that's the money actually being spent, not lost. Green (Emergency, Baby, Car) never dips. Blue is your investments compounding. The bold dark line is combined net worth.</p>
+    </section>
+
+    <section>
+      <h2 class="section-title"><span class="eyebrow">Long view</span> Savings tracker</h2>
+      <div class="chart-wrap">
+        <canvas id="tracker-chart" height="200"></canvas>
+      </div>
+      <p class="note">Update your real quarter-end balance in <code>data.json</code> (ask Claude) to see whether the pot is actually growing.</p>
+    </section>
+  </div>
 
   <footer>Updated by hand, one chat at a time — emlambert/budget-26</footer>
 </div>
@@ -183,6 +206,7 @@
     document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"><\/script>');
   }
 </script>
+<script type="module" src="js/router.js"></script>
 <script type="module" src="js/main.js"></script>
 </body>
 </html>

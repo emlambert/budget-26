@@ -26,6 +26,13 @@ export function renderAllCharts(data, totals) {
   try { renderForecast(data.sinkingFunds, totals.savingsAmt, data.monthlySavingsAllocation.emergencyFloor, totals.annualPlanMonthly, data.investments); } catch (e) { console.error('forecast chart failed', e); chartFallback('forecast-chart'); }
 }
 
+// Exposed so the page router can force Chart.js to recompute sizing when a
+// tab containing a chart becomes visible (canvases in display:none containers
+// can otherwise render at zero size).
+window.__resizeAllCharts = () => {
+  [pieChart, trackerChart, forecastChart].forEach(c => { if (c) c.resize(); });
+};
+
 function renderPie(items) {
   const ctx = document.getElementById('pie-chart');
   const labels = items.map(i => i.name);
