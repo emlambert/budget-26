@@ -94,7 +94,7 @@
     {
       "name": "Sri Lanka accommodation",
       "category": "Trip",
-      "notes": "Accommodation totals \u00a3600 each; already had \u00a3180 in gifts.",
+      "notes": "Honeymoon accommodation \u2014 totals \u00a3600 each; already had \u00a3180 in gifts.",
       "target": 510,
       "targetDate": "2027-01-01",
       "balance": 120
@@ -102,7 +102,7 @@
     {
       "name": "Sri Lanka spending money",
       "category": "Trip",
-      "notes": "Private driver + tips + entries (\u00a3300) + eating out (\u00a320/day).",
+      "notes": "Honeymoon spending money \u2014 private driver + tips + entries (\u00a3300) + eating out (\u00a320/day).",
       "target": 1000,
       "targetDate": "2027-01-01",
       "balance": 200
@@ -161,15 +161,17 @@
       "notes": "3-month milestone = \u00a33,390. Target below is the 6-month stretch goal.",
       "target": 6780,
       "targetDate": null,
-      "balance": 1000
+      "balance": 1000,
+      "role": "emergency"
     },
     {
-      "name": "Baby / maternity fund",
+      "name": "Fund C",
       "category": "Long-term",
-      "notes": "Trying from Jan 2027. No fixed target yet.",
-      "target": null,
+      "notes": "Longer-term personal goal \u2014 target below covers a income gap plus a cushion for one-off costs.",
+      "target": 10000,
       "targetDate": null,
-      "balance": 0
+      "balance": 0,
+      "role": "secondary-reserve"
     },
     {
       "name": "Car fund",
@@ -178,16 +180,14 @@
       "target": 13000,
       "targetDate": "2031-08-01",
       "balance": 0
-    }
-  ],
-  "consideringGoals": [
+    },
     {
-      "considering": true,
-      "name": "",
-      "category": "Trip",
-      "notes": "",
+      "name": "Future home fund",
+      "category": "Long-term",
+      "notes": "Saving toward moving to a bigger place one day \u2014 no fixed target or date yet.",
       "target": null,
-      "targetDate": "2026-09-01"
+      "targetDate": null,
+      "balance": 0
     }
   ],
   "annualSpendingPlan": [
@@ -295,5 +295,22 @@
         "targetAllocationPct": 10
       }
     ]
-  }
+  },
+  "categoryCeilings": [
+    {
+      "name": "Holidays & trips",
+      "ceilingPerYear": 2500,
+      "sinkingFundNames": [
+        "Crete spending money",
+        "Sri Lanka accommodation",
+        "Sri Lanka spending money",
+        "Next year's holiday (2027)"
+      ],
+      "annualPlanCategories": [
+        "Big holiday(s) abroad",
+        "Weekend & short trips"
+      ]
+    }
+  ],
+  "savingsTrackerNote": "Starting fresh from here \u2014 the wedding period wasn't representative. Send Claude your Monzo export (CSV or screenshot) each quarter and it'll fill in the real numbers."
 }

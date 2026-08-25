@@ -19,8 +19,8 @@ export function computeForecast(sinkingFunds, savingsPool, emergencyFloor, annua
     target: f.target,
     targetDate: f.targetDate ? new Date(f.targetDate) : null
   }));
-  const emergency = state.find(f => f.name.toLowerCase().includes('emergency'));
-  const baby = state.find(f => f.name.toLowerCase().includes('baby'));
+  const emergency = state.find(f => f.role === 'emergency');
+  const baby = state.find(f => f.role === 'secondary-reserve');
 
   const labels = [];
   const totalSeries = [];

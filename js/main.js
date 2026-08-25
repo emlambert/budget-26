@@ -1,10 +1,10 @@
 import { computeAllFunds, computeTotals } from './computeFunds.js';
 import { computeAnnualPlanMonthly, renderAnnualPlan } from './annualPlan.js';
-import { renderInvestments, portfolioTotal } from './investments.js';
+import { renderInvestments } from './investments.js';
 import { renderDashboard } from './dashboard.js';
 import { renderSinkingFunds } from './sinkingFunds.js';
 import { renderAllocation } from './allocation.js';
-import { renderConsidering } from './considering.js';
+import { renderCategoryCeilings } from './categoryCeilings.js';
 import { renderAllCharts } from './charts.js';
 
 function renderAll(data) {
@@ -17,16 +17,14 @@ function renderAll(data) {
   renderSinkingFunds(funds, totals);
   renderAllocation(data, totals);
   renderAnnualPlan(data, () => renderAll(data));
-  renderConsidering(data, totals, data.takeHome, () => renderConsideringOnly(data, totals));
+  renderCategoryCeilings(data);
   renderAllCharts(data, totals);
 
-  document.getElementById('last-updated').textContent = data.lastUpdated;
-}
+  if (data.savingsTrackerNote) {
+    document.getElementById('tracker-note').textContent = data.savingsTrackerNote;
+  }
 
-// Re-renders only the "considering" section on user interaction, without
-// re-fetching data.json or redrawing charts/tables that haven't changed.
-function renderConsideringOnly(data, totals) {
-  renderConsidering(data, totals, data.takeHome, () => renderConsideringOnly(data, totals));
+  document.getElementById('last-updated').textContent = data.lastUpdated;
 }
 
 fetch('data.json?_=' + Date.now())

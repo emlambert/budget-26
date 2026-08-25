@@ -15,7 +15,7 @@ export function renderAllocation(data, totals) {
   const banner = document.getElementById('alloc-banner');
   if (floorWarning) {
     banner.className = 'warning-banner';
-    banner.textContent = `⚠ This month's near-term commitments leave less than your £${floor}/mo protected minimum for the Emergency fund. Check the "considering" section below before adding more.`;
+    banner.textContent = `⚠ This month's near-term commitments leave less than your £${floor}/mo protected minimum for the Emergency fund.`;
   } else {
     banner.className = 'ok-banner';
     banner.textContent = `OK — the Emergency fund floor is covered this month.`;

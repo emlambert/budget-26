@@ -117,20 +117,9 @@
     </section>
 
     <section>
-      <h2 class="section-title"><span class="eyebrow">Play it out</span> Considering a new goal?</h2>
-      <div class="considering-box">
-        <p class="note" style="margin-top:0">Tick a goal to see its effect on the totals below — nothing here is saved until you ask Claude to commit it to the register above.</p>
-        <div id="considering-rows"></div>
-        <button id="add-considering" type="button" style="margin-top:0.75rem; font-family: var(--font-mono); font-size: 0.78rem; border: 1px solid var(--line); background: #fff; border-radius: 3px; padding: 0.4rem 0.8rem; cursor: pointer;">+ add another goal</button>
-        <div class="whatif-total">
-          <span>What-if total (ticked only)</span>
-          <strong id="whatif-total">—</strong>
-        </div>
-        <div class="whatif-total">
-          <span>Projected true growth rate if committed</span>
-          <strong id="whatif-truegrowth">—</strong>
-        </div>
-      </div>
+      <h2 class="section-title"><span class="eyebrow">Yearly caps</span> Category ceilings</h2>
+      <p class="note" style="margin-top:0">A ballpark you don't want to go over each year, with visibility into exactly which pots are drawing from it — so "budgeting £2,500 for holidays" actually means something.</p>
+      <div id="ceilings-box"></div>
     </section>
   </div>
 
@@ -192,7 +181,7 @@
       <div class="chart-wrap">
         <canvas id="tracker-chart" height="200"></canvas>
       </div>
-      <p class="note">Update your real quarter-end balance in <code>data.json</code> (ask Claude) to see whether the pot is actually growing.</p>
+      <p class="note" id="tracker-note">Update your real quarter-end balance in <code>data.json</code> (ask Claude) to see whether the pot is actually growing.</p>
     </section>
   </div>
 
