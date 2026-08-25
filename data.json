@@ -87,9 +87,9 @@
       "name": "Sri Lanka accommodation",
       "category": "Trip",
       "notes": "Honeymoon accommodation \u2014 totals \u00a3600 each; already had \u00a3180 in gifts.",
-      "target": 510,
+      "target": 320,
       "targetDate": "2027-01-01",
-      "balance": 190
+      "balance": 0
     },
     {
       "name": "Sri Lanka spending money",
@@ -97,7 +97,7 @@
       "notes": "Honeymoon spending money \u2014 private driver + tips + entries (\u00a3300) + eating out (\u00a320/day).",
       "target": 1000,
       "targetDate": "2027-01-01",
-      "balance": 200
+      "balance": 300
     },
     {
       "name": "Izzy's Hen Do",
@@ -105,7 +105,7 @@
       "notes": "\u00a3265 accommodation + activities, \u00a380 transport",
       "target": 345,
       "targetDate": "2027-05-01",
-      "balance": 0
+      "balance": 25
     },
     {
       "name": "Katie's Hen Do",
