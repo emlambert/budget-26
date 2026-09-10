@@ -105,16 +105,6 @@ The repo is public and Emily is fine with that for financial figures generally, 
 
 ---
 
-## Personal context (so nothing needs re-explaining)
-
-- The weddings in `sinkingFunds` (Rueben & Amy, Izzy & Oscar, Laura & Katie) are ones Emily is a **guest** at, not her own.
-- Sri Lanka is Emily's own **honeymoon**.
-- Emily has a workplace pension — deliberately **not tracked** in this tool.
-- "Future home fund" is a placeholder for moving to a bigger place eventually — no target set yet.
-- Emily sometimes edits `data.json` directly on GitHub rather than asking Claude — check `git log` for recent manual commits before assuming the file matches what a past chat left it as.
-
----
-
 ## Preferences for how Claude should work on this
 
 - Concise, mobile-friendly responses — Emily mostly uses this from her phone.

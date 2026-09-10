@@ -76,30 +76,6 @@
   ],
   "sinkingFunds": [
     {
-      "name": "Crete spending money",
-      "category": "Trip",
-      "notes": "\u20ac250 boat trip (2 Sep) + eating out ~7 nights. Flights & accommodation already paid.",
-      "target": 455,
-      "targetDate": "2026-08-31",
-      "balance": 455
-    },
-    {
-      "name": "Sri Lanka accommodation",
-      "category": "Trip",
-      "notes": "Honeymoon accommodation \u2014 totals \u00a3600 each; already had \u00a3180 in gifts.",
-      "target": 320,
-      "targetDate": "2027-01-01",
-      "balance": 320
-    },
-    {
-      "name": "Sri Lanka spending money",
-      "category": "Trip",
-      "notes": "Honeymoon spending money \u2014 private driver + tips + entries (\u00a3300) + eating out (\u00a320/day).",
-      "target": 1000,
-      "targetDate": "2027-01-01",
-      "balance": 1000
-    },
-    {
       "name": "Izzy's Hen Do",
       "category": "Occasion",
       "notes": "\u00a3265 accommodation + activities, \u00a380 transport",
@@ -126,7 +102,7 @@
     {
       "name": "Rueben & Amy's Wedding",
       "category": "Occasion",
-      "notes": "\u00a3100 accommodation, \u00a350 gift, \u00a350 transport",
+      "notes": "\u00a3100 accommodation, \u00a350 gift, \u00a350 transport \u2014 guest, not Emily's own wedding",
       "target": 200,
       "targetDate": "2027-07-15",
       "balance": 0
@@ -134,7 +110,7 @@
     {
       "name": "Izzy & Oscar's Wedding",
       "category": "Occasion",
-      "notes": "\u00a375 accommodation, \u00a350 transport, \u00a350 gift",
+      "notes": "\u00a375 accommodation, \u00a350 transport, \u00a350 gift \u2014 guest, not Emily's own wedding",
       "target": 175,
       "targetDate": "2027-08-01",
       "balance": 0
@@ -142,7 +118,7 @@
     {
       "name": "Laura & Katie's Wedding",
       "category": "Occasion",
-      "notes": "\u00a375 accommodation, \u00a325 transport, \u00a350 gift",
+      "notes": "\u00a375 accommodation, \u00a325 transport, \u00a350 gift \u2014 guest, not Emily's own wedding",
       "target": 150,
       "targetDate": "2027-08-01",
       "balance": 0
@@ -186,7 +162,7 @@
     {
       "category": "Big holiday(s) abroad",
       "annualAmount": 0,
-      "notes": "Already covered by named Sinking Funds pots (Crete, Sri Lanka, next year's holiday) \u2014 raise this once those clear and you want a fresh, unnamed trip fund"
+      "notes": "Covered by the named Sinking Funds trip pot (next year's holiday) \u2014 raise this once that clears and you want a fresh, unnamed trip fund. Crete and Sri Lanka pots have been removed now that they're settled."
     },
     {
       "category": "Weekend & short trips",
@@ -293,9 +269,6 @@
       "name": "Holidays & trips",
       "ceilingPerYear": 2500,
       "sinkingFundNames": [
-        "Crete spending money",
-        "Sri Lanka accommodation",
-        "Sri Lanka spending money",
         "Next year's holiday (2027)"
       ],
       "annualPlanCategories": [
