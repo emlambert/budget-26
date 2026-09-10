@@ -89,7 +89,7 @@
       "notes": "Honeymoon accommodation \u2014 totals \u00a3600 each; already had \u00a3180 in gifts.",
       "target": 320,
       "targetDate": "2027-01-01",
-      "balance": 0
+      "balance": 320
     },
     {
       "name": "Sri Lanka spending money",
@@ -97,7 +97,7 @@
       "notes": "Honeymoon spending money \u2014 private driver + tips + entries (\u00a3300) + eating out (\u00a320/day).",
       "target": 1000,
       "targetDate": "2027-01-01",
-      "balance": 300
+      "balance": 1000
     },
     {
       "name": "Izzy's Hen Do",
@@ -153,7 +153,7 @@
       "notes": "3-month milestone = \u00a33,390. Target below is the 6-month stretch goal.",
       "target": 6780,
       "targetDate": null,
-      "balance": 1000,
+      "balance": 1832,
       "role": "emergency"
     },
     {
