@@ -60,7 +60,7 @@ function renderPie(items) {
 
 function renderTracker(tracker) {
   const ctx = document.getElementById('tracker-chart');
-  const labels = tracker.map(t => t.quarter);
+  const labels = tracker.map(t => new Date(t.month + '-01').toLocaleDateString('en-GB', { month: 'short', year: '2-digit' }));
   const values = tracker.map(t => t.balance);
   if (trackerChart) trackerChart.destroy();
   trackerChart = new Chart(ctx, {

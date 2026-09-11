@@ -1,4 +1,4 @@
-const PAGES = ['overview', 'commitments', 'allocation', 'investments', 'forecast'];
+const PAGES = ['overview', 'commitments', 'spending', 'allocation', 'investments', 'forecast'];
 
 function showPage(name) {
   if (!PAGES.includes(name)) name = PAGES[0];

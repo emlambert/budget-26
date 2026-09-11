@@ -22,6 +22,7 @@
   <nav class="pagenav" id="pagenav">
     <button data-page="overview" class="pagenav-btn">Overview</button>
     <button data-page="commitments" class="pagenav-btn">Commitments</button>
+    <button data-page="spending" class="pagenav-btn">Spending</button>
     <button data-page="allocation" class="pagenav-btn">Allocation</button>
     <button data-page="investments" class="pagenav-btn">Investments</button>
     <button data-page="forecast" class="pagenav-btn">Forecast</button>
@@ -57,6 +58,7 @@
         <div class="stat-card"><div class="num" id="stat-savingsrate">—</div><div class="lbl">Headline savings rate</div></div>
         <div class="stat-card"><div class="num" id="stat-fundsbalance">—</div><div class="lbl">Total sinking funds balance</div></div>
         <div class="stat-card"><div class="num" id="stat-truegrowth">—</div><div class="lbl">True growth savings rate</div></div>
+        <div class="stat-card stat-card-highlight"><div class="num" id="stat-networth">—</div><div class="lbl">Net worth — funds + investments (as of <span id="stat-networth-asof">—</span>)</div></div>
       </div>
     </section>
 
@@ -77,7 +79,7 @@
           <thead>
             <tr>
               <th>Pot</th><th>Fund type</th><th>Notes</th><th>Target</th><th>By</th>
-              <th>Balance</th><th>Still needed</th><th>£/mo</th><th>Status</th>
+              <th>Balance</th><th>Progress</th><th>Still needed</th><th>£/mo</th><th>Status</th>
             </tr>
           </thead>
           <tbody id="funds-body"></tbody>
@@ -85,7 +87,7 @@
             <tr class="total-row">
               <td>Total</td><td></td><td></td>
               <td class="num-cell" id="funds-total-target">—</td><td></td>
-              <td class="num-cell" id="funds-total-balance">—</td><td></td>
+              <td class="num-cell" id="funds-total-balance">—</td><td></td><td></td>
               <td class="num-cell" id="funds-total-monthly">—</td><td></td>
             </tr>
           </tfoot>
@@ -120,6 +122,39 @@
       <h2 class="section-title"><span class="eyebrow">Yearly caps</span> Category ceilings</h2>
       <p class="note" style="margin-top:0">A ballpark you don't want to go over each year, with visibility into exactly which pots are drawing from it — so "budgeting £2,500 for holidays" actually means something.</p>
       <div id="ceilings-box"></div>
+    </section>
+  </div>
+
+  <!-- ============ PAGE: SPENDING ============ -->
+  <div class="page" id="page-spending">
+    <section>
+      <h2 class="section-title"><span class="eyebrow">Actual vs budget</span> Monthly spending by category</h2>
+      <p class="note" style="margin-top:0">Joint and personal card split out separately, checked at least monthly — see how each category actually landed against what's budgeted.</p>
+      <label style="font-family:var(--font-mono); font-size:0.78rem; color:var(--ink-soft); display:block; margin-bottom:0.6rem;">
+        Month
+        <select id="spending-month-select" style="margin-left:0.5rem; font-family:var(--font-body); font-size:0.85rem; border:1px solid var(--line); border-radius:3px; padding:0.3rem 0.5rem;"></select>
+      </label>
+      <div id="spending-empty-note" class="note" style="display:none">No figures logged for this month yet — send Claude the joint + personal breakdown when you're ready to check in.</div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr><th>Category</th><th>Budgeted</th><th>Joint</th><th>Personal</th><th>Total</th><th>% of budget</th><th>Variance</th></tr>
+          </thead>
+          <tbody id="spending-body"></tbody>
+          <tfoot>
+            <tr class="total-row">
+              <td>Total</td>
+              <td class="num-cell" id="spending-total-budgeted">—</td>
+              <td class="num-cell" id="spending-total-joint">—</td>
+              <td class="num-cell" id="spending-total-personal">—</td>
+              <td class="num-cell" id="spending-total-actual">—</td>
+              <td></td>
+              <td class="num-cell" id="spending-total-variance">—</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="note" id="spending-note"></p>
     </section>
   </div>
 

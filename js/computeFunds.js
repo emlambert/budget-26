@@ -13,7 +13,7 @@ export function computeFund(f, today = new Date()) {
     else monthly = Math.round(stillNeeded / months);
   }
 
-  const pctFunded = (f.target && f.balance > 0) ? f.balance / f.target : null;
+  const pctFunded = f.target ? Math.max(f.balance, 0) / f.target : null;
 
   let status;
   if (f.target == null) status = 'No target set';

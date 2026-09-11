@@ -207,35 +207,91 @@
   },
   "savingsTracker": [
     {
-      "quarter": "Q3 2026",
-      "quarterEnd": "2026-09-30",
+      "month": "2026-09",
+      "monthEnd": "2026-09-30",
       "balance": null,
       "contributions": null,
       "withdrawn": null
     },
     {
-      "quarter": "Q4 2026",
-      "quarterEnd": "2026-12-31",
+      "month": "2026-10",
+      "monthEnd": "2026-10-31",
       "balance": null,
       "contributions": null,
       "withdrawn": null
     },
     {
-      "quarter": "Q1 2027",
-      "quarterEnd": "2027-03-31",
+      "month": "2026-11",
+      "monthEnd": "2026-11-30",
       "balance": null,
       "contributions": null,
       "withdrawn": null
     },
     {
-      "quarter": "Q2 2027",
-      "quarterEnd": "2027-06-30",
+      "month": "2026-12",
+      "monthEnd": "2026-12-31",
+      "balance": null,
+      "contributions": null,
+      "withdrawn": null
+    },
+    {
+      "month": "2027-01",
+      "monthEnd": "2027-01-31",
+      "balance": null,
+      "contributions": null,
+      "withdrawn": null
+    },
+    {
+      "month": "2027-02",
+      "monthEnd": "2027-02-28",
+      "balance": null,
+      "contributions": null,
+      "withdrawn": null
+    },
+    {
+      "month": "2027-03",
+      "monthEnd": "2027-03-31",
+      "balance": null,
+      "contributions": null,
+      "withdrawn": null
+    },
+    {
+      "month": "2027-04",
+      "monthEnd": "2027-04-30",
+      "balance": null,
+      "contributions": null,
+      "withdrawn": null
+    },
+    {
+      "month": "2027-05",
+      "monthEnd": "2027-05-31",
+      "balance": null,
+      "contributions": null,
+      "withdrawn": null
+    },
+    {
+      "month": "2027-06",
+      "monthEnd": "2027-06-30",
+      "balance": null,
+      "contributions": null,
+      "withdrawn": null
+    },
+    {
+      "month": "2027-07",
+      "monthEnd": "2027-07-31",
+      "balance": null,
+      "contributions": null,
+      "withdrawn": null
+    },
+    {
+      "month": "2027-08",
+      "monthEnd": "2027-08-31",
       "balance": null,
       "contributions": null,
       "withdrawn": null
     }
   ],
-  "lastUpdated": "2026-08-22",
+  "lastUpdated": "2026-09-10",
   "investments": {
     "platform": "InvestEngine",
     "accountType": "Self-managed ISA",
@@ -277,5 +333,63 @@
       ]
     }
   ],
-  "savingsTrackerNote": "Starting fresh from here \u2014 the wedding period wasn't representative. Send Claude your Monzo export (CSV or screenshot) each quarter and it'll fill in the real numbers."
+  "savingsTrackerNote": "Checking in at least monthly now. Send Claude a screenshot of your pot balances + investment value each month \u2014 no need for a CSV export just for this, the headline numbers are enough.",
+  "actualSpending": [
+    {
+      "month": "2026-09",
+      "entries": [
+        {
+          "category": "Bills",
+          "joint": null,
+          "personal": null
+        },
+        {
+          "category": "Groceries",
+          "joint": null,
+          "personal": null
+        },
+        {
+          "category": "Home (purchases pot)",
+          "joint": null,
+          "personal": null
+        },
+        {
+          "category": "Shopping",
+          "joint": null,
+          "personal": null
+        },
+        {
+          "category": "Personal care",
+          "joint": null,
+          "personal": null
+        },
+        {
+          "category": "Eating out",
+          "joint": null,
+          "personal": null
+        },
+        {
+          "category": "Gifts",
+          "joint": null,
+          "personal": null
+        },
+        {
+          "category": "Transport",
+          "joint": null,
+          "personal": null
+        },
+        {
+          "category": "Personal bills (insurance + phone)",
+          "joint": null,
+          "personal": null
+        },
+        {
+          "category": "Activities/treats",
+          "joint": null,
+          "personal": null
+        }
+      ]
+    }
+  ],
+  "actualSpendingNote": "Monthly. Send Claude your Monzo export split by joint and personal card (CSV is easiest for this one since it's per-category and per-card) \u2014 or two screenshots, one of each account's category breakdown, if that's quicker."
 }

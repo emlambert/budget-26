@@ -246,6 +246,36 @@ tr.total-row td {
 }
 .badge.spending { background: var(--terracotta-soft); color: var(--terracotta); }
 .badge.growth { background: var(--growth-soft); color: var(--growth); }
+.badge.gold { background: var(--gold-soft); color: var(--gold); }
+.badge.neutral { background: var(--line); color: var(--ink-soft); }
+
+.stat-card-highlight {
+  background: var(--paper-raised);
+  border: 1px solid var(--gold);
+}
+
+.progress-track {
+  background: var(--line);
+  border-radius: 999px;
+  height: 6px;
+  width: 100%;
+  min-width: 60px;
+  overflow: hidden;
+}
+.progress-fill {
+  background: var(--growth);
+  height: 100%;
+}
+.progress-fill.over { background: var(--terracotta); }
+.progress-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+  margin-top: 0.2rem;
+}
+
+.over-text { color: var(--terracotta); }
+.under-text { color: var(--growth); }
 
 .notes-cell { color: var(--ink-soft); font-size: 0.8rem; max-width: 220px; }
 

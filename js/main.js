@@ -1,23 +1,26 @@
 import { computeAllFunds, computeTotals } from './computeFunds.js';
 import { computeAnnualPlanMonthly, renderAnnualPlan } from './annualPlan.js';
-import { renderInvestments } from './investments.js';
+import { renderInvestments, portfolioTotal } from './investments.js';
 import { renderDashboard } from './dashboard.js';
 import { renderSinkingFunds } from './sinkingFunds.js';
 import { renderAllocation } from './allocation.js';
 import { renderCategoryCeilings } from './categoryCeilings.js';
 import { renderAllCharts } from './charts.js';
+import { renderActualSpend } from './actualSpend.js';
 
 function renderAll(data) {
   const funds = computeAllFunds(data.sinkingFunds);
   const { monthlyTotal: annualPlanMonthly } = computeAnnualPlanMonthly(data.annualSpendingPlan);
   const totals = computeTotals(funds, data.budgetItems, data.takeHome, annualPlanMonthly);
+  const investmentsTotal = portfolioTotal(data.investments);
 
   renderInvestments(data, () => renderAll(data));
-  renderDashboard(totals, data.takeHome);
+  renderDashboard(totals, data.takeHome, investmentsTotal, data.investments.asOf);
   renderSinkingFunds(funds, totals);
   renderAllocation(data, totals);
   renderAnnualPlan(data, () => renderAll(data));
   renderCategoryCeilings(data);
+  renderActualSpend(data);
   renderAllCharts(data, totals);
 
   if (data.savingsTrackerNote) {
